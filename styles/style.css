@@ -74,8 +74,14 @@ section{
   }
 }
 
-ol{
+ol {
   margin: auto 75px;
+  counter-reset: list;
 }
-
-
+ol > li {
+  list-style: none;
+}
+ol > li:before {
+  content: counter(list) ") ";
+  counter-increment: list;
+}
